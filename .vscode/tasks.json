@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Run",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "-o",
+        "tosh_tools.exe",
+        "main.c",
+        "alarm_clock.c",
+        "calculator.c",
+        "currency_converter.c",
+        "sticky_note",
+        "task_manager",
+        "theme_manager"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Build and run the C program"
+    },
+    {
+      "label": "Run Program",
+      "type": "shell",
+      "command": "./tosh_tools.exe",
+      "group": "test",
+      "dependsOn": "Build and Run"
+    }
+  ]
+}
