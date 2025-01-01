@@ -11,12 +11,12 @@ void runCurrencyConverter() {
         printf("1. USD to EUR\n");
         printf("2. EUR to USD\n");
         printf("3. Exit to Main Menu\n");
-        printf("Enter your choice (1, 2, or 3): ");
+        printf("\nEnter your choice (1, 2, or 3): \n");
         scanf("%d", &choice);
 
         if (choice == 1) {
             // USD to EUR conversion
-            printf("Enter amount in USD: ");
+            printf("Enter amount in USD: $");
             scanf("%f", &amount);
             convertedAmount = amount * 0.85; // Conversion rate (example)
             printf("Converted amount: %.2f EUR\n", convertedAmount);
@@ -30,7 +30,6 @@ void runCurrencyConverter() {
         } 
         else if (choice == 3) {
             // Exit to Main Menu
-            printf("Returning to main menu...\n");
             return; // Return control back to main.c
         } 
         else {

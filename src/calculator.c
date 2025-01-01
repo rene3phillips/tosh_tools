@@ -57,7 +57,6 @@ void runCalculator() {
         scanf(" %c", &exitChoice); // space before %c is to consume any leftover newline character
 
         if (exitChoice == 'n' || exitChoice == 'N') {
-            printf("Exiting calculator...\n");
             return; // Return control back to main menu
         }
     }

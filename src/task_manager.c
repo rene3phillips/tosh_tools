@@ -19,6 +19,8 @@ Task tasks[MAX_TASKS];
 int task_count = 0;
 
 void add_task() {
+    printf("\n--- Task Manager ---\n");
+
     if (task_count >= MAX_TASKS) {
         printf("Maximum number of tasks reached!\n");
         return;
@@ -34,7 +36,7 @@ void add_task() {
     scanf("%d", &priority);
     tasks[task_count].priority = (Priority)priority;
 
-    printf("Enter task due date (YYYY-MM-DD): ");
+    printf("Enter task due date (MM-DD-YYYY): ");
     scanf("%s", tasks[task_count].due_date);
 
     tasks[task_count].completed = 0;  // Task is not completed by default
@@ -43,6 +45,8 @@ void add_task() {
 }
 
 void view_tasks() {
+    printf("\n--- Task Manager ---\n");
+
     if (task_count == 0) {
         printf("No tasks available.\n");
         return;
@@ -59,6 +63,8 @@ void view_tasks() {
 }
 
 void delete_task() {
+    printf("\n--- Task Manager ---\n");
+
     if (task_count == 0) {
         printf("No tasks to delete.\n");
         return;
@@ -84,6 +90,8 @@ void delete_task() {
 }
 
 void mark_task_completed() {
+    printf("\n--- Task Manager ---\n");
+
     if (task_count == 0) {
         printf("No tasks to mark as completed.\n");
         return;

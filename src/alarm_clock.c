@@ -7,6 +7,8 @@
 void setAlarm() {
     int hour, minute;
     
+  
+    printf("\n--- Alarm Clock ---\n");
     // Ask the user to input the alarm time
     printf("Enter the alarm time (HH MM): ");
     

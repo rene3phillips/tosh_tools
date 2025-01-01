@@ -13,11 +13,12 @@ StickyNote notes[MAX_NOTES];
 int note_count = 0;
 
 void add_note() {  // Correct function name with underscore
+    printf("\n--- Sticky Notes ---\n");
+
     if (note_count >= MAX_NOTES) {
         printf("Maximum number of notes reached!\n");
         return;
     }
-
     printf("Enter your note: ");
     getchar();  // To consume any leftover newline character
     fgets(notes[note_count].note, MAX_NOTE_LENGTH, stdin);
@@ -28,6 +29,8 @@ void add_note() {  // Correct function name with underscore
 }
 
 void view_notes() {
+    printf("\n--- Sticky Notes ---\n");
+
     if (note_count == 0) {
         printf("No notes available.\n");
         return;
@@ -39,6 +42,8 @@ void view_notes() {
 }
 
 void delete_note() {
+    printf("\n--- Sticky Notes ---\n");
+
     if (note_count == 0) {
         printf("No notes to delete.\n");
         return;

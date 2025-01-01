@@ -17,17 +17,17 @@
 
 void apply_teal_purple_theme() {
     printf("%s%s", TEAL_TEXT, PURPLE_BG);
-    printf("Teal and Purple theme applied!\n");
+    printf("\nTeal and Purple theme applied!\n");
 }
 
 void apply_light_theme() {
     printf("%s%s", LIGHT_TEXT, LIGHT_BG);
-    printf("Light theme applied!\n");
+    printf("\nLight theme applied!\n");
 }
 
 void apply_dark_theme() {
     printf("%s%s", DARK_TEXT, DARK_BG);
-    printf("Dark theme applied!\n");
+    printf("\nDark theme applied!\n");
 }
 
 void display_menu() {

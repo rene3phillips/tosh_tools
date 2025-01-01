@@ -14,7 +14,8 @@
         "currency_converter.c",
         "sticky_note",
         "task_manager",
-        "theme_manager"
+        "theme_manager",
+        "weather.c"
       ],
       "group": {
         "kind": "build",
