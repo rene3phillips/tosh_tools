@@ -12,10 +12,13 @@
         "alarm_clock.c",
         "calculator.c",
         "currency_converter.c",
+        "file_finder.c",
+        "file_manager.c",
         "sticky_note",
         "task_manager",
         "theme_manager",
-        "weather.c"
+        "timer.c",
+        "unit_converter.c"
       ],
       "group": {
         "kind": "build",

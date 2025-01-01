@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Function prototypes for the calculator and alarm clock
 void setAlarm();
 void runCalculator();
 void runCurrencyConverter();
@@ -18,7 +17,8 @@ void apply_light_theme();
 void apply_dark_theme();
 void convert_temperature();
 void start_timer();
-
+void organize(const char *directory);
+void list_files(const char *path);
 
 
 int main(int argc, char *argv[]) {
@@ -48,6 +48,8 @@ int main(int argc, char *argv[]) {
     printf("13. Dark Theme\n");
     printf("14. Unit Converter\n");
     printf("15. Timer\n");
+    printf("16. File Manager\n");
+    printf("17. File Finder\n");
     printf("20. Exit\n"); 
 
     // Get user choice
@@ -73,6 +75,8 @@ int main(int argc, char *argv[]) {
                 printf("13. Dark Theme\n");
                 printf("14. Unit Converter\n");
                 printf("15. Timer\n");
+                printf("16. File Manager\n");
+                printf("17. File Finder\n");
                 printf("20. Exit\n"); 
                 break;
             case 1:
@@ -120,6 +124,29 @@ int main(int argc, char *argv[]) {
             case 15:
               start_timer();
               break;
+            case 16:
+              char directory[1024];
+
+              // Get the directory to organize
+              printf("\nEnter the path of the folder you want to organize...");
+              printf("\nIt will sort files into categories like Audio, Documents, and Images: ");
+              scanf("%s", directory);
+
+              organize(directory);
+
+              printf("\nFile organization complete!\n");
+              break;
+            
+            case 17:
+              char path[1024];  // Variable to store the user input for location
+
+              // Ask the user for the location (path)
+              printf("\nEnter the location to list files: ");
+              scanf("%1023s", path);  // Take input for the location
+
+              list_files(path); // Call the function to list files
+              break;
+
 
 
             case 20:
