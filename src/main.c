@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Function prototypes for various operations
 void setAlarm();
 void runCalculator();
 void runCurrencyConverter();
@@ -20,11 +21,10 @@ void start_timer();
 void organize(const char *directory);
 void list_files(const char *path);
 
-
 int main(int argc, char *argv[]) {
     int choice;
 
-    // Display welcome message
+    // Display a welcome message and a banner for the application
     printf("\nWelcome to ToshTools!\n");
     printf(" _____         _   _____           _     \n");
     printf("|_   _|__  ___| |_|_   _|__   ___ | |___ \n");
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     printf("  | | (_) \\__ \\ | | | | (_) | (_) | \\__ \\\n");
     printf("  |_|\\___/|___/_| |_|_|\\___/ \\___/|_|___/\n\n");
 
-
+    // Display the main menu with options
     printf("1.  Alarm Clock\n");
     printf("2.  Calculator\n");
     printf("3.  Currency Converter\n");
@@ -43,23 +43,25 @@ int main(int argc, char *argv[]) {
     printf("8.  View tasks\n");
     printf("9.  Delete a task\n");
     printf("10. Mark task as complete\n");
-    printf("11. Teal and Purple Theme\n");
+    printf("11. Purple Theme\n");
     printf("12. Light Theme\n");
     printf("13. Dark Theme\n");
     printf("14. Unit Converter\n");
     printf("15. Timer\n");
     printf("16. File Manager\n");
     printf("17. File Finder\n");
-    printf("20. Exit\n"); 
+    printf("20. Exit\n");
 
-    // Get user choice
+    // Start an infinite loop to keep the program running
     while (1) {
-        printf("\nPlease choose an option, or select [0] for the list of options:\n");    
+        // Prompt user for an option
+        printf("\nPlease choose an option, or select [0] for the list of options:\n");
         scanf("%d", &choice);
 
-        // Process the user's choice
+        // Process user's choice
         switch (choice) {
             case 0:
+                // Display menu again if user selects 0
                 printf("\n1.  Alarm Clock\n");
                 printf("2.  Calculator\n");
                 printf("3.  Currency Converter\n");
@@ -70,96 +72,116 @@ int main(int argc, char *argv[]) {
                 printf("8.  View tasks\n");
                 printf("9.  Delete a task\n");
                 printf("10. Mark task as complete\n");
-                printf("11. Teal and Purple Theme\n");
+                printf("11. Purple Theme\n");
                 printf("12. Light Theme\n");
                 printf("13. Dark Theme\n");
                 printf("14. Unit Converter\n");
                 printf("15. Timer\n");
                 printf("16. File Manager\n");
                 printf("17. File Finder\n");
-                printf("20. Exit\n"); 
+                printf("20. Exit\n");
                 break;
             case 1:
+                // Call function to set an alarm
                 setAlarm(); 
                 break;
             case 2:
+                // Call function to run the calculator
                 runCalculator(); 
                 break;
             case 3:
-              runCurrencyConverter();
-              break;
+                // Call function for currency conversion
+                runCurrencyConverter();
+                break;
             case 4:
-              add_note();
-              break;
+                // Call function to add a note
+                add_note();
+                break;
             case 5:
-              view_notes();
-              break;
+                // Call function to view notes
+                view_notes();
+                break;
             case 6:
-              delete_note();
-              break;  
+                // Call function to delete a note
+                delete_note();
+                break;  
             case 7:
-              add_task();
-              break;
+                // Call function to add a task
+                add_task();
+                break;
             case 8:
-              view_tasks();
-              break;  
+                // Call function to view tasks
+                view_tasks();
+                break;  
             case 9:
-              delete_task();
-              break;
+                // Call function to delete a task
+                delete_task();
+                break;
             case 10:
-              mark_task_completed();
-              break;
+                // Call function to mark a task as complete
+                mark_task_completed();
+                break;
             case 11:
-              apply_teal_purple_theme();
-              break;
+                // Call function to apply teal and purple theme
+                apply_teal_purple_theme();
+                break;
             case 12:
-              apply_light_theme();
-              break;
+                // Call function to apply light theme
+                apply_light_theme();
+                break;
             case 13:
-              apply_dark_theme();
-              break;
+                // Call function to apply dark theme
+                apply_dark_theme();
+                break;
             case 14:
-              convert_temperature();
-              break;
+                // Call function to convert temperature
+                convert_temperature();
+                break;
             case 15:
-              start_timer();
-              break;
+                // Call function to start a timer
+                start_timer();
+                break;
             case 16:
-              char directory[1024];
+                // Function to organize files in a directory
+                char directory[1024];
 
-              // Get the directory to organize
-              printf("\nEnter the path of the folder you want to organize...");
-              printf("\nIt will sort files into categories like Audio, Documents, and Images: ");
-              scanf("%s", directory);
+                // Get the directory path from user
+                printf("\nEnter the path of the folder you want to organize...");
+                printf("\nIt will sort files into categories like Audio, Documents, and Images: ");
+                scanf("%s", directory);
 
-              organize(directory);
+                // Organize the files based on their types
+                organize(directory);
 
-              printf("\nFile organization complete!\n");
-              break;
+                // Notify the user that the organization is complete
+                printf("\nFile organization complete!\n");
+                break;
             
             case 17:
-              char path[1024];  // Variable to store the user input for location
+                // Function to list files in a directory
+                char path[1024];
 
-              // Ask the user for the location (path)
-              printf("\nEnter the location to list files: ");
-              scanf("%1023s", path);  // Take input for the location
+                // Get the path for listing files
+                printf("\nEnter the location to list files: ");
+                scanf("%1023s", path);  // Take input for the location
 
-              list_files(path); // Call the function to list files
-              break;
-
-
+                // List the files in the specified directory
+                list_files(path); 
+                break;
 
             case 20:
-              printf("\nExiting the program...\n\n");
-              return 0; // Exits the program
-              break;
+                // Exit the program
+                printf("\nExiting the program...\n\n");
+                return 0; // Exits the program
             default:
+                // Handle invalid choices
                 printf("\nInvalid option. Please try again.\n");
         }
     }
 
     return 0;
 }
+
 
 
 
