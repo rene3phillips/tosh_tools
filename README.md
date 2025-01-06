@@ -29,10 +29,14 @@ ToshTools is a command-line interface (CLI) utility designed to streamline vario
 
 ## Usage
 
-Run `ToshTools` by entering the following command in your terminal:
+Run `ToshTools` by entering one of the following commands in your terminal:
 
 ```bash
 tosh_tools
+```
+or
+```bash
+tt
 ```
 
 When you run `ToshTools`, you will be presented with a menu of commands. Each command is associated with a number. To execute a command, enter the number corresponding to the desired command and follow any additional prompts.
@@ -42,6 +46,10 @@ When you run `ToshTools`, you will be presented with a menu of commands. Each co
 1. Run `ToshTools`:
    ```bash
    tosh_tools
+   ```
+   or
+   ```bash
+   tt
    ```
 2. You might see a menu like this:
    ```
