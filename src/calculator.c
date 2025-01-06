@@ -1,36 +1,37 @@
 #include <stdio.h>
 
-// Function to run the calculator
+// Function to Run Calculator 
 void runCalculator() {
-    int num1, num2, result;  // Variables to store the two numbers and the result
-    char operator;           // Variable to store the operator (+, -, *, /)
-    char exitChoice;         // Variable to store user choice for quitting or continuing
+    int num1, num2, result;  
+    char operator;          
+    char exitChoice;         
 
-    // Infinite loop to keep running the calculator until the user chooses to quit
+    // Keep Calculator Running
     while (1) {
-        // Display the calculator menu
+
+        // Program Title and Prompt User to Input Math Expression
         printf("\n--- Calculator ---\n");
-        printf("Enter a simple calculation (e.g., 3 + 4) or 'q' to quit: ");
+        printf("\nEnter a simple calculation (e.g., 3 + 4) or 'q' to quit: ");
         
-        // Read user input: two integers and an operator
+        // Read User Input
         int validInput = scanf("%d %c %d", &num1, &operator, &num2);
 
-        // If the input is invalid (e.g., the user types 'q' or something non-numeric)
+        // Invalid Input
         if (validInput != 3) {
-            // Consume any leftover newline character from previous input
+        
             scanf("%c", &exitChoice); 
 
-            // Check if the user wants to quit the calculator
+            // Check if the User wants to Quit
             if (exitChoice == 'q' || exitChoice == 'Q') {
                 printf("Exiting calculator...\n");
-                return; // Exit the calculator and return to main menu
+                return; // Exit Program
             } else {
                 printf("Invalid input. Please try again.\n");
-                continue; // Continue asking for a valid calculation input
+                continue; // Continue Program
             }
         }
 
-        // Perform the calculation based on the entered operator
+        // Perform Calculation
         switch (operator) {
             case '+':
                 result = num1 + num2;  // Addition
@@ -45,27 +46,25 @@ void runCalculator() {
                 printf("Result: %d\n", result);
                 break;
             case '/':
-                // Handle division, check for division by zero
                 if (num2 != 0) {
                     result = num1 / num2;  // Division
                     printf("Result: %d\n", result);
                 } else {
-                    printf("Error: Division by zero!\n");  // Error if dividing by zero
+                    printf("Error: Division by zero!\n");  // Dividing by Zero Error
                 }
                 break;
             default:
-                printf("Error: Invalid operator!\n");  // Error if an invalid operator is entered
+                printf("Error: Invalid operator!\n");  // Invalid Operator Error
                 break;
         }
 
-        // Ask the user if they want to perform another calculation or quit
+        // Prompt User for Another Calculation
         printf("\nWould you like to perform another calculation? (y/n): ");
         scanf(" %c", &exitChoice);  // space before %c to consume any leftover newline character
 
-        // If the user chooses to quit, exit the calculator
+        // Check if the User wants to Quit
         if (exitChoice == 'n' || exitChoice == 'N') {
-            return;  // Return control back to the main menu
+            return;  // End Program
         }
     }
 }
-

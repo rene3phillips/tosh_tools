@@ -1,48 +1,54 @@
 #include <stdio.h>
 
-// Function to run the currency converter
+// Function to Run Currency Converter
 void runCurrencyConverter() {
-    float amount, convertedAmount;  // Variables to store the input amount and the converted amount
-    int choice;  // Variable to store the user's menu choice
+    float amount, convertedAmount;  
+    int choice;  
 
-    // Infinite loop to keep running the currency converter until the user chooses to exit
+    // Keep Currency Converter Running
     while (1) {
-        // Display the currency conversion options
+
+        // Program Title and Menu
         printf("\n--- Currency Converter ---\n");
-        printf("1. USD to EUR\n");
+        printf("\n1. USD to EUR\n");
         printf("2. EUR to USD\n");
         printf("3. Exit to Main Menu\n");
         printf("\nEnter your choice (1, 2, or 3): \n");
         
-        // Read the user's choice
+        // Read the User's Input
         scanf("%d", &choice);
 
-        // If user chooses USD to EUR conversion
+        // USD to EUR 
         if (choice == 1) {
-            // Ask the user for the amount in USD
+
+            // Input and Scan USD Amount
             printf("Enter amount in USD: $");
             scanf("%f", &amount);
 
-            // Convert the amount to EUR using the conversion rate (example rate: 1 USD = 0.85 EUR)
+            // Convert Amount to EUR
             convertedAmount = amount * 0.85; 
             printf("Converted amount: %.2f EUR\n", convertedAmount);
         } 
-        // If user chooses EUR to USD conversion
+
+        // EUR to USD
         else if (choice == 2) {
-            // Ask the user for the amount in EUR
+
+            // Input and Scan EUR Amount
             printf("Enter amount in EUR: ");
             scanf("%f", &amount);
 
-            // Convert the amount to USD using the conversion rate (example rate: 1 EUR = 1.18 USD)
+            // Convert Amount to USD
             convertedAmount = amount * 1.18; 
             printf("Converted amount: %.2f USD\n", convertedAmount);
         } 
-        // If user chooses to exit to the main menu
+
+        // Exit Program
         else if (choice == 3) {
             printf("Exiting to Main Menu...\n");
-            return; // Return control back to the main program
+            return; 
         } 
-        // If the user enters an invalid choice
+
+        // Invalid Choice
         else {
             printf("Invalid choice. Please enter 1, 2, or 3.\n");
         }

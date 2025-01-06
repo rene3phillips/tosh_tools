@@ -3,67 +3,70 @@
 #include <string.h>
 #include <time.h>
 
-// Define constants for maximum tasks and task length
 #define MAX_TASKS 10
 #define MAX_TASK_LENGTH 100
 
-// Enum to represent task priority
+// Enum to Represent Task Priority
 typedef enum { LOW, MEDIUM, HIGH } Priority;
 
-// Struct to store task details
+// Structure to Store Task Details
 typedef struct {
-    char task[MAX_TASK_LENGTH];  // Task description
-    Priority priority;           // Task priority (Low, Medium, High)
-    char due_date[11];           // Task due date in YYYY-MM-DD format
-    int completed;               // Status of the task (0 = Pending, 1 = Completed)
+    char task[MAX_TASK_LENGTH];  // Task Description
+    Priority priority;           // Task Priority (Low, Medium, High)
+    char due_date[11];           // Task Due Date 
+    int completed;               // Status of Task (0 = Pending, 1 = Completed)
 } Task;
 
-// Array to store tasks and a counter for the number of tasks
+// Array to Store Tasks
 Task tasks[MAX_TASKS];
+
+// Counter to Count Tasks
 int task_count = 0;
 
-// Function to add a new task
+// Function to Add a Task
 void add_task() {
+
     printf("\n--- Task Manager ---\n");
 
-    // Check if the maximum number of tasks has been reached
+    // Check if MAX_TASKS Has Been Reached
     if (task_count >= MAX_TASKS) {
-        printf("Maximum number of tasks reached!\n");
+        printf("\nMaximum number of tasks reached!\n");
         return;
     }
 
-    // Prompt the user to enter a task description
-    printf("Enter your task: ");
-    getchar();  // To consume any leftover newline character from previous input
-    fgets(tasks[task_count].task, MAX_TASK_LENGTH, stdin);  // Get task description
-    tasks[task_count].task[strcspn(tasks[task_count].task, "\n")] = 0;  // Remove the newline character
+    // Prompt User to Enter Task 
+    printf("\nEnter your task: ");
+    getchar();  
+    fgets(tasks[task_count].task, MAX_TASK_LENGTH, stdin);  
+    tasks[task_count].task[strcspn(tasks[task_count].task, "\n")] = 0;  
 
-    // Prompt the user to enter the priority of the task
+    // Prompt the User to Enter Priority
     printf("Enter task priority (0 = Low, 1 = Medium, 2 = High): ");
     int priority;
     scanf("%d", &priority);
     tasks[task_count].priority = (Priority)priority;  // Set the task priority
 
-    // Prompt the user to enter the task due date
+    // Prompt User to Enter Due Date
     printf("Enter task due date (MM-DD-YYYY): ");
-    scanf("%s", tasks[task_count].due_date);  // Get the task due date
+    scanf("%s", tasks[task_count].due_date);  
 
-    tasks[task_count].completed = 0;  // Set the task status as not completed initially
-    task_count++;  // Increment the task count
+    tasks[task_count].completed = 0;  // Set Task as "Not Completed"
+    task_count++;  // Increment Task Count
     printf("Task added!\n");
 }
 
-// Function to view all tasks
+// Function to View All Tasks
 void view_tasks() {
+
     printf("\n--- Task Manager ---\n");
 
-    // If no tasks exist, inform the user
+    // No Tasks Exist
     if (task_count == 0) {
-        printf("No tasks available.\n");
+        printf("\nNo tasks available.\n");
         return;
     }
 
-    // Display all the tasks with details
+    // Display All Tasks with Details
     printf("\nTasks:\n");
     for (int i = 0; i < task_count; i++) {
         printf("Task %d: %s\n", i + 1, tasks[i].task);
@@ -74,58 +77,64 @@ void view_tasks() {
     }
 }
 
-// Function to delete a specific task
+// Function to Delete Task
 void delete_task() {
+
     printf("\n--- Task Manager ---\n");
 
-    // If there are no tasks, inform the user
+    // No Tasks Exist
     if (task_count == 0) {
-        printf("No tasks to delete.\n");
+        printf("\nNo tasks to delete.\n");
         return;
     }
 
+    // Prompt User to Enter Task Number to Delete
     int task_index;
-    printf("Enter task number to delete: ");
-    scanf("%d", &task_index);  // Get the task number to delete
+    printf("\nEnter task number to delete: ");
+    scanf("%d", &task_index);  
 
-    // Check if the entered task number is valid
+    // Check if Entered Task Number is Valid
     if (task_index < 1 || task_index > task_count) {
         printf("Invalid task number!\n");
         return;
     }
 
-    // Shift tasks after the deleted task to fill the gap
+    // Shift Tasks After Deleting Task (to fill gap)
     for (int i = task_index - 1; i < task_count - 1; i++) {
         strcpy(tasks[i].task, tasks[i + 1].task);
         tasks[i].priority = tasks[i + 1].priority;
         strcpy(tasks[i].due_date, tasks[i + 1].due_date);
         tasks[i].completed = tasks[i + 1].completed;
     }
-    task_count--;  // Decrease the task count
+
+    // Decrement Task Count
+    task_count--;  
     printf("Task deleted.\n");
 }
 
-// Function to mark a specific task as completed
+// Function to Mark Task Comploeted 
 void mark_task_completed() {
+
     printf("\n--- Task Manager ---\n");
 
-    // If there are no tasks, inform the user
+    // No Tasks Exist
     if (task_count == 0) {
-        printf("No tasks to mark as completed.\n");
+        printf("\nNo tasks to mark as completed.\n");
         return;
     }
 
+    // Prompt User to Enter Task Number to Complete
     int task_index;
-    printf("Enter task number to mark as completed: ");
+    printf("\nEnter task number to mark as completed: ");
     scanf("%d", &task_index);  // Get the task number to mark as completed
 
-    // Check if the entered task number is valid
+    // Check if Task Number Entered is Valid
     if (task_index < 1 || task_index > task_count) {
         printf("Invalid task number!\n");
         return;
     }
 
-    // Mark the selected task as completed
+    // Mark Task as Complete
     tasks[task_index - 1].completed = 1;
     printf("Task marked as completed.\n");
 }
