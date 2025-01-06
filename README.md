@@ -66,7 +66,7 @@ When you run `ToshTools`, you will be presented with a menu of commands. Each co
 
 ## Special Shoutouts
 
-A huge shoutout to my son for testing this project and inspiring me to make it. At just 10 years old, he and I came up with the business idea **90sReplay** together, a project that celebrates all things 90s! He's already sharing his own creative work on GitHub under the **90sReplay** name. Be sure to check out his cool projects and ideas!
+A huge shoutout to my son for testing this project and inspiring me to make it. At just 10 years old, he and I came up with the business idea **90sReplay** together, a project that celebrates all things 90s! His love for command-line interfaces and coding continues to inspire me, and it was his passion for technology that helped shape this idea. He's already sharing his own creative work on GitHub under the **90sReplay** name. Be sure to check out his cool projects and ideas!
 
 ## Contact
 
