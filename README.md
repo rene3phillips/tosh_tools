@@ -7,12 +7,11 @@ ToshTools is a command-line interface (CLI) utility designed to streamline vario
 - **Alarm Clock**  
 - **Calculator**  
 - **Currency Converter**  
-- **File Finder / Manager**  
+- **File Finder/Organizer**  
 - **Sticky Notes**  
 - **Task Manager**  
 - **Theme Manager**  
 - **Timer**  
-- **Unit Converter**  
 
 ## Installation
 
@@ -26,22 +25,7 @@ ToshTools is a command-line interface (CLI) utility designed to streamline vario
    ```
 3. Add ToshTools to your PATH for easy access.
 
-
 ## Usage
-
-Run `ToshTools` by entering one of the following commands in your terminal:
-
-```bash
-tosh_tools
-```
-or
-```bash
-tt
-```
-
-When you run `ToshTools`, you will be presented with a menu of commands. Each command is associated with a number. To execute a command, enter the number corresponding to the desired command and follow any additional prompts.
-
-### Example Workflow
 
 1. Run `ToshTools`:
    ```bash
@@ -51,7 +35,7 @@ When you run `ToshTools`, you will be presented with a menu of commands. Each co
    ```bash
    tt
    ```
-2. You might see a menu like this:
+2. You will see a menu that looks like this:
    ```
    1. Alarm Clock
    2. Calculator
@@ -64,9 +48,9 @@ When you run `ToshTools`, you will be presented with a menu of commands. Each co
    ```
 4. Follow the on-screen instructions to complete the task.
 
-## Special Shoutouts
+## Special Shoutout
 
-A huge shoutout to my son for testing this project and inspiring me to make it. At just 10 years old, he and I came up with the business idea **90sReplay** together, a project that celebrates all things 90s! His love for command-line interfaces and coding continues to inspire me, and it was his passion for technology that helped shape this idea. He's already sharing his own creative work on GitHub under the **90sReplay** name. Be sure to check out his cool projects and ideas!
+A huge shoutout to my son for testing this project and inspiring me to make it. His love for command-line interfaces and coding continues to inspire me, and it was his passion for technology that helped shape this idea. At just 10 years old, he and I came up with the business idea **90sReplay** together, a project that celebrates all things 90s! He's already sharing his own creative work on GitHub under the **90sReplay** name. Be sure to check out his cool projects and ideas!
 
 ## Contact
 
